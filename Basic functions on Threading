@@ -1,0 +1,32 @@
+Import statement = import threading / from threading import Thread
+
+My conclusion:
+    thread is generally applied on method
+    So we need to create functions first then apply threading on them
+
+
+Declare the thread & IMP Methods:
+  x = Thread(target=thread_function) .......Without Argument
+  x = Thread(target=thread_function, args=10) .......With Argument
+        
+        
+Example:        
+        import logging
+        import threading
+        import time
+
+        def thread_function(name):
+            logging.info("Thread %s: starting", name)
+            time.sleep(2)
+            logging.info("Thread %s: finishing", name)
+
+        if __name__ == "__main__":
+            logging.basicConfig(format=format, level=logging.INFO,datefmt="%H:%M:%S")
+
+            logging.info("Main    : before creating thread")
+            x = threading.Thread(target=thread_function, args=(1,))
+            logging.info("Main    : before running thread")
+            x.start()
+            logging.info("Main    : wait for the thread to finish")
+            # x.join()
+            logging.info("Main    : all done")    
