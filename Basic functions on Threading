@@ -1,6 +1,9 @@
 Import statement = import threading / from threading import Thread
 
 My conclusion:
+    Generally normal code execution contain only Main thread which execute program serialy
+    threading introduce new thread to execute process symultaneously.
+    
     thread is generally applied on method
     So we need to create functions first then apply threading on them
 
@@ -8,7 +11,8 @@ My conclusion:
 Declare the thread & IMP Methods:
   x = Thread(target=thread_function) .......Without Argument
   x = Thread(target=thread_function, args=10) .......With Argument
-        
+  
+  X.join().... with this Main thread will wait till this thread to execute
         
 Example:        
         import logging
